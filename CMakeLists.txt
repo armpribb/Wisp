@@ -32,6 +32,7 @@ set(PROJECT_SOURCES
         gameengine.cpp
         gameobject.cpp
         background.cpp
+        pid.cpp
         wisp.cpp
         qml.qrc
         Background.qml

@@ -22,9 +22,9 @@ signals:
 
 public slots:
     void updateAll();
-    void handleMouseLeftButtonClicked(int posX, int posY);
-    void handleMouseRightButtonClicked(int posX, int posY);
-    void handleMouseHoverPositionChanged(int posX, int posY);
+    void handleMouseLeftButtonClicked(double mousePosX, double mousePosY);
+    void handleMouseRightButtonClicked(double mousePosX, double mousePosY);
+    void handleMouseHoverPositionChanged(double mousePosX, double mousePosY);
 
 public:
     void spawnGameObject(GameObject::Type objType);

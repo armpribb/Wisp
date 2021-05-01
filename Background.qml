@@ -4,9 +4,9 @@ Item {
     id: background
     anchors.fill: parent
 
-    signal mouseLeftButtonClicked(x: int, y: int)
-    signal mouseRightButtonClicked(x: int, y: int)
-    signal mouseHoverPositionChanged(x: int, y: int)
+    signal mouseLeftButtonClicked(x: double, y: double)
+    signal mouseRightButtonClicked(x: double, y: double)
+    signal mouseHoverPositionChanged(x: double, y: double)
 
     Rectangle {
         anchors.fill: parent
