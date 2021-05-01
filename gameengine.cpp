@@ -16,12 +16,12 @@ GameEngine::GameEngine(QQmlApplicationEngine *engine, QObject *parent) : QObject
     wisp->registerAsQmlGameObject(engine);
     gameObjects.append(wisp);
 
-    QObject::connect(background->getQmlComponent(), SIGNAL(mouseLeftButtonClicked(int,int)),
-                     this, SLOT(handleMouseLeftButtonClicked(int,int)));
-    QObject::connect(background->getQmlComponent(), SIGNAL(mouseRightButtonClicked(int,int)),
-                     this, SLOT(handleMouseRightButtonClicked(int,int)));
-    QObject::connect(background->getQmlComponent(), SIGNAL(mouseHoverPositionChanged(int,int)),
-                     this, SLOT(handleMouseHoverPositionChanged(int,int)));
+    QObject::connect(background->getQmlComponent(), SIGNAL(mouseLeftButtonClicked(double,double)),
+                     this, SLOT(handleMouseLeftButtonClicked(double,double)));
+    QObject::connect(background->getQmlComponent(), SIGNAL(mouseRightButtonClicked(double,double)),
+                     this, SLOT(handleMouseRightButtonClicked(double,double)));
+    QObject::connect(background->getQmlComponent(), SIGNAL(mouseHoverPositionChanged(double,double)),
+                     this, SLOT(handleMouseHoverPositionChanged(double,double)));
 }
 
 void GameEngine::updateAll()
@@ -50,18 +50,18 @@ void GameEngine::spawnGameObject(GameObject::Type objType)
     }
 }
 
-void GameEngine::handleMouseLeftButtonClicked(int posX, int posY)
+void GameEngine::handleMouseLeftButtonClicked(double mousePosX, double mousePosY)
 {
-    wisp->setTargetPosition(posX, posY);
+    wisp->setTargetPosition(mousePosX, mousePosY);
 }
 
-void GameEngine::handleMouseRightButtonClicked(int posX, int posY)
+void GameEngine::handleMouseRightButtonClicked(double mousePosX, double mousePosY)
 {
-    qDebug() << "Right mouse button clicked, x:" << posX << ", y: " << posY;
+    qDebug() << "Right mouse button clicked, x:" << mousePosX << ", y: " << mousePosY;
 }
 
 
-void GameEngine::handleMouseHoverPositionChanged(int posX, int posY)
+void GameEngine::handleMouseHoverPositionChanged(double mousePosX, double mousePosY)
 {
-    wisp->setOrientation(posX, posY);
+    wisp->setOrientation(mousePosX, mousePosY);
 }
