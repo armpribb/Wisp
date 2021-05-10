@@ -4,12 +4,15 @@
 #include <QDebug>
 
 #include "background.h"
+#include "controlpanel.h"
 #include "wisp.h"
 
 GameEngine::GameEngine(QQmlApplicationEngine *engine, QObject *parent) : QObject(parent), qmlEngine(engine)
 {
     background = createAndRegisterGameObject<Background>();
     wisp = createAndRegisterGameObject<Wisp>();
+
+    createAndRegisterGameObject<ControlPanel>();
 
     QObject::connect(background->getQmlComponent(), SIGNAL(mouseLeftButtonClicked(double,double)),
                      this, SLOT(handleMouseLeftButtonClicked(double,double)));

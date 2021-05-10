@@ -24,7 +24,7 @@ int main(int argc, char *argv[])
     GameEngine gameEngine(&engine);
     QTimer *timer = new QTimer(&gameEngine);
     QObject::connect(timer, &QTimer::timeout, &gameEngine, &GameEngine::updateAll);
-    timer->start(10);
+    timer->start(8);
 
     return app.exec();
 }

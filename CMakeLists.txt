@@ -32,10 +32,12 @@ set(PROJECT_SOURCES
         gameengine.cpp
         gameobject.cpp
         background.cpp
+        controlpanel.cpp
         pid.cpp
         wisp.cpp
         qml.qrc
         Background.qml
+        ControlPanel.qml
         Wisp.qml
 )
 

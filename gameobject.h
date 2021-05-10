@@ -17,6 +17,7 @@ public:
         Background = 0,
         Wisp,
         Obstruction,
+        UI,
         Invalid
     };
     Q_ENUM(Type)

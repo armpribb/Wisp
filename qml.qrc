@@ -3,5 +3,6 @@
         <file>main.qml</file>
         <file>Background.qml</file>
         <file>Wisp.qml</file>
+        <file>ControlPanel.qml</file>
     </qresource>
 </RCC>

@@ -16,5 +16,5 @@ Background::~Background()
 
 void Background::update()
 {
-//    qDebug() << "Playboard updated!";
+//    qDebug() << "Background updated!";
 }
