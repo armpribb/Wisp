@@ -8,13 +8,8 @@
 
 GameEngine::GameEngine(QQmlApplicationEngine *engine, QObject *parent) : QObject(parent), qmlEngine(engine)
 {
-    background = new Background(this);
-    background->registerAsQmlGameObject(engine);
-    gameObjects.append(background);
-
-    wisp = new Wisp(this);
-    wisp->registerAsQmlGameObject(engine);
-    gameObjects.append(wisp);
+    background = createAndRegisterGameObject<Background>();
+    wisp = createAndRegisterGameObject<Wisp>();
 
     QObject::connect(background->getQmlComponent(), SIGNAL(mouseLeftButtonClicked(double,double)),
                      this, SLOT(handleMouseLeftButtonClicked(double,double)));

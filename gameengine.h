@@ -29,6 +29,16 @@ public slots:
 public:
     void spawnGameObject(GameObject::Type objType);
 
+    template<typename T>
+    T* createAndRegisterGameObject()
+    {
+        auto gameObject = new T(this);
+        gameObject->registerAsQmlGameObject(qmlEngine);
+        gameObjects.append(gameObject);
+
+        return gameObject;
+    }
+
 private:
     QVector<GameObject*> gameObjects;
     QQmlApplicationEngine *qmlEngine;
